@@ -1,0 +1,95 @@
+*{
+    margin: 0; 
+    padding: 0;
+    outline: 0;
+    border: none;
+    box-sizing: border-box;
+    text-decoration:none;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: 'Montserrat','Lato';
+    font-size: 10pt;
+}
+
+/* Navbar */
+
+/* Main */
+#main .container {
+    text-align: center;
+    margin-top: 8rem;
+}
+
+/* table */
+form .container .table tbody tr td{
+    /* border-right: .5px solid black; */
+}
+
+/* Cart total */
+.ct {
+    
+}
+
+#ct .container {
+    margin-bottom: 5rem;
+    margin-left: 55rem;
+    border: 1px dashed black;
+}
+
+/* content */
+#content {
+    background-color: rgb(25 29 111);
+    width: 100%;
+    color: white;
+}
+
+#content .container h1 {
+    width: 100%;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid black;
+}
+
+#content .container .row { 
+    width: 100%;
+}
+
+#content .container .row .col-main {
+    width: 10rem;
+    margin-right: 25rem;
+}
+
+#content .container .row .col ul {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+#content .container .row .col ul li a {
+    margin-left: -2rem;
+    text-decoration: none;
+    color: red;
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    background-color: black;
+    padding: 10px 0;
+    color: #fff;
+}
+  
+.footer .container .row .col .social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+  
+.footer .container .row .col .social-icons li {
+    display: inline;
+}
