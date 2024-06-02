@@ -17,6 +17,13 @@ body{
 }
 
 /* Navbar */
+#mainNavbar{
+    background: rgba(255,255,255,.2);
+}
+
+#mainNavbar .container .navbar-collapse .active{
+    color: rgba(0,0,0,.4);
+}
 
 /* Chart List */
 #chart-list {
