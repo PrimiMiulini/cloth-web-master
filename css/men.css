@@ -17,6 +17,9 @@ body{
 }
 
 /* Navbar */
+#mainNavbar{
+    background: rgba(0,0,0,.5);
+}
 
 /* Chart List */
 #chart-list {

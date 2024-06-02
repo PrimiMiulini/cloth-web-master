@@ -5,9 +5,13 @@ window.addEventListener('scroll', function() {
     if (window.scrollY > 0) {
         navbar.classList.add('navbar-dark', 'bg-dark');
     } else if(window.scrollY == 0) {
-        navbar.classList.remove('bg-dark');
-        if (currentPage == 'women.php') {
-            navbar.classList.remove('navbar-dark');
+        if(currentPage == 'detail.php'){
+            navbar.classList.remove('');
+        }else{
+            navbar.classList.remove('bg-dark');
+            if (currentPage == 'women.php') {
+                navbar.classList.remove('navbar-dark');
+            }
         }
     }
 });
