@@ -98,7 +98,7 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                           <?php foreach ($cartItems as $index => $item): ?>
                           <tr>
                               <td class="text-center"><?= $index + 1 ?></td>
-                              <td class="text-center"><img src="product/<?= htmlspecialchars($item['image']) ?>" alt="" title="" width="80"></td>
+                              <td class="text-center"><img src="<?= htmlspecialchars($item['image']) ?>" alt="" title="" width="80"></td>
                               <td><?= htmlspecialchars($item['name']) ?></td>
                               <td><input value="<?= htmlspecialchars($item['quantity']) ?>" id="quantity" name="quantity[<?= $index ?>]" class="border" size="20"></td>
                               <td><?= number_format($item['price'] * $item['quantity'], 0, ',', '.') ?></td>

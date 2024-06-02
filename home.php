@@ -165,31 +165,31 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
     <!-- Product Start-->
     <section id="product" class="product">
     <h2>New Product</h2>
-      <p data-aos="fade-right-up" data-aos-offset="100" data-aos-duration="1000">Monthly New Product!</p>
-      <div class="row">
+    <p data-aos="fade-right-up" data-aos-offset="100" data-aos-duration="1000">Monthly New Product!</p>
+    <div class="row">
         <?php 
         $count = 0;
         foreach ($product as $prd) : ?>
-          <div data-aos="flip-right" data-aos-delay="100" data-aos-offset="250" data-aos-duration="1500" class="col-md-3">
-            <!-- form jika ingin ditambahkan ke cart -->
-            <form action="detail.php" method="get" name="">
-              <a href="detail.php" class="product-link">
-              <a href="detail.php?gambar=<?=$prd['gambar']?>" class="product-link">
-                  <img src="<?=$prd['gambar'] ?>" alt="" width="150">
-              </a>
-                <h4><?= $prd['nama_produk'] ?></h4>
-              </a>
-              <p>Rp. <?= number_format( $prd['harga'], 0,',','.'); ?></p>
-              <button type="submit" class="btn btn-outline-success">ADD CART</button>
-            </form>
-          </div>
-          <?php 
-          $count++;
-          if ($count % 4 == 0) : ?>
-            </div><div class="row">
-          <?php endif; ?>
+            <div data-aos="flip-right" data-aos-delay="100" data-aos-offset="250" data-aos-duration="1500" class="col-md-3">
+                <form action="detail.php" method="get">
+                    <a href="detail.php?gambar=<?= $prd['gambar'] ?>" class="product-link">
+                        <img src="<?= $prd['gambar'] ?>" alt="" width="150">
+                    </a>
+                    <h4><?= $prd['nama_produk'] ?></h4>
+                    <p>Rp. <?= number_format($prd['harga'], 0, ',', '.'); ?></p>
+                    <!-- Hidden input to pass product image -->
+                    <input type="hidden" name="gambar" value="<?= $prd['gambar'] ?>">
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-outline-success" name="submit">ADD CART</button>
+                </form>
+            </div>
+            <?php 
+            $count++;
+            if ($count % 4 == 0) : ?>
+                </div><div class="row">
+            <?php endif; ?>
         <?php endforeach; ?>
-      </div>
+    </div>
     </section>
     <!-- Product End-->
 
