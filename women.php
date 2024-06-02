@@ -85,7 +85,7 @@ $totalItems = getProductCount($keyword, 'woman');
         <form action="detail.php" method="get">
           <input type="hidden" name="gambar" value="<?=$prd['gambar']?>">
           <a href="detail.php?gambar=<?=$prd['gambar']?>" class="product-link">
-            <img src="product/<?=$prd['gambar'] ?>" alt="" width="150">
+            <img src="<?=$prd['gambar'] ?>" alt="" width="150">
           </a>
           <h4><?= $prd['nama_produk'] ?></h4>
           <p>Rp. <?= number_format($prd['harga'], 0, ',', '.'); ?></p>
