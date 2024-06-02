@@ -1,13 +1,17 @@
 // Navbar scroll
-  // JavaScript to add/remove scrolled class based on scroll position
-  window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function() {
     const navbar = document.getElementById('mainNavbar');
+    const currentPage = window.location.pathname.split('/').pop(); // Mendapatkan nama file dari URL
     if (window.scrollY > 0) {
         navbar.classList.add('navbar-dark', 'bg-dark');
-    } else {
-        navbar.classList.remove('navbar-dark', 'bg-dark');
+    } else if(window.scrollY == 0) {
+        navbar.classList.remove('bg-dark');
+        if (currentPage == 'women.php') {
+            navbar.classList.remove('navbar-dark');
+        }
     }
 });
+
 // Chart lIST
 document.getElementById('chart').addEventListener('click', function() {
     document.getElementById('chart-list').classList.toggle('active');

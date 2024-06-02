@@ -10,6 +10,8 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cloth Shop</title>
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,10 +28,12 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
     />
     <!-- Local css -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- data aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body class="index-page">
     <!-- Navbar start -->
-    <nav class="navbar navbar-expand-lg fixed-top mb-5" id="mainNavbar">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top mb-5" id="mainNavbar">
       <div class="container">
         <a class="navbar-brand" href="home.php"
           >SHOP<span class="text-primary">A</span></a
@@ -49,7 +53,7 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
           <ul class="navbar-nav">
             <li class="nav-item">
               <a
-                class="nav-link active"
+                class="nav-link"
                 aria-current="page"
                 href="evrything.php"
                 >EVERYTHING</a
@@ -69,10 +73,10 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">ABOUT</a>
+              <a class="nav-link active" aria-current="page" href="#">ABOUT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">CONTACTUS</a>
+              <a class="nav-link active" aria-current="page" href="#">CONTACTUS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#" id="chart">
@@ -136,22 +140,43 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
     </section>
     <!-- hero End -->
 
+    <!-- About Start -->
+    <section id="about" class="about m-4 p-4">
+      <div class="container p-4">
+        <h2 class="text-center mb-4" data-aos="fade-down" data-aos-offset="250" data-aos-duration="1500">ABOUT OUR PRODUCT</h2>
+        <div class="row align-items-center">
+          <div class="col-md">
+            <img data-aos="flip-right" data-aos-offset="400" data-aos-delay="150" data-aos-duration="1500" src="img/hero/hero4.jpg" class="float-md-start me-4" alt="" width="350">
+          </div>
+          <div class="col-md">
+            <h4 class="">SHOP<span class="text-primary">A</span> Company</h4>
+            <h5>We are a company where give a your daily wear, as a company we fully supervise our product and service to customer.</h5>
+            <p><i data-feather="award" class="me-2"></i>We put quality first</p>
+            <p><i data-feather="check" class="me-2"></i>We detailing evry shape</p>
+            <p><i data-feather="cloud-lightning" class="me-2"></i>We test a material evrywhere</p>
+            <h6>We are based on melbourne australia.</h6>
+            <p><i data-feather="map-pin" width="15" class="me-2"></i>Burnswick Town City.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About End -->
+
     <!-- Product Start-->
     <section id="product" class="product">
     <h2>New Product</h2>
-      <p>Monthly New Product!</p>
+      <p data-aos="fade-right-up" data-aos-offset="100" data-aos-duration="1000">Monthly New Product!</p>
       <div class="row">
         <?php 
         $count = 0;
         foreach ($product as $prd) : ?>
-          <div class="col-md-3">
+          <div data-aos="flip-right" data-aos-delay="100" data-aos-offset="250" data-aos-duration="1500" class="col-md-3">
             <!-- form jika ingin ditambahkan ke cart -->
             <form action="detail.php" method="get" name="">
               <a href="detail.php" class="product-link">
               <a href="detail.php?gambar=<?=$prd['gambar']?>" class="product-link">
-    <img src="product/<?=$prd['gambar'] ?>" alt="" width="150">
-</a>
-
+                  <img src="product/<?=$prd['gambar'] ?>" alt="" width="150">
+              </a>
                 <h4><?= $prd['nama_produk'] ?></h4>
               </a>
               <p>Rp. <?= number_format( $prd['harga'], 0,',','.'); ?></p>
@@ -208,13 +233,13 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
     <!-- Footer Start -->
     <footer class="footer">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col">
-            <p>
+            <p class="text-center">
               All right reserved
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
+                width="10"
                 height="16"
                 fill="currentColor"
                 class="bi bi-c-circle"
@@ -224,10 +249,8 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
                   d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512"
                 />
               </svg>
-              2024
+              <span class="text-warning"> 2024 </span>
             </p>
-          </div>
-          <div class="col">
             <ul class="social-icons">
               <li>
                 <svg
@@ -278,6 +301,15 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
     </footer>
     <!-- Footer End -->
 
+    <!-- data aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- feather icons -->
+    <script>
+      feather.replace();
+    </script>
     <!-- js -->
     <script src="js/index.js"></script>
     <script
