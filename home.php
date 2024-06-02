@@ -175,7 +175,7 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
             <form action="detail.php" method="get" name="">
               <a href="detail.php" class="product-link">
               <a href="detail.php?gambar=<?=$prd['gambar']?>" class="product-link">
-                  <img src="product/<?=$prd['gambar'] ?>" alt="" width="150">
+                  <img src="<?=$prd['gambar'] ?>" alt="" width="150">
               </a>
                 <h4><?= $prd['nama_produk'] ?></h4>
               </a>
