@@ -21,20 +21,22 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Local css -->
     <link rel="stylesheet" href="css/cart.css">
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
 
     <!-- Navbar start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
         <div class="container">
-          <a class="navbar-brand" href="index.html">SHOP<span class="text-primary">A</span></a>
+          <a class="navbar-brand" href="home.php">SHOP<span class="text-primary">A</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#product">EVERYTHING</a>
+                <a class="nav-link" aria-current="page" href="#product">EVERYTHING</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="women.php">WOMEN</a>
@@ -56,11 +58,8 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                 <a class="nav-link active" aria-current="page" href="#">CONTACTUS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                    </svg>
+                <a class="nav-link active" aria-current="page" href="index.html" onclick=" return confirm('LOGOUT?') ">
+                    <i data-feather="log-out" width="15"></i>
                 </a>
               </li>
             </ul>
@@ -100,7 +99,7 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                               <td class="text-center"><?= $index + 1 ?></td>
                               <td class="text-center"><img src="<?= htmlspecialchars($item['image']) ?>" alt="" title="" width="80"></td>
                               <td><?= htmlspecialchars($item['name']) ?></td>
-                              <td><input value="<?= htmlspecialchars($item['quantity']) ?>" id="quantity" name="quantity[<?= $index ?>]" class="border" size="20"></td>
+                              <td><input type="number" value="<?= htmlspecialchars($item['quantity']) ?>" id="quantity" name="quantity[<?= $index ?>]" class="border" size="20"></td>
                               <td><?= number_format($item['price'] * $item['quantity'], 0, ',', '.') ?></td>
                               <td class="text-center">
                                   <input class="form-check-input" type="checkbox" name="remove[]" value="<?= $item['id'] ?>" id="flexCheckDefault">
@@ -225,7 +224,10 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
       </footer>
     <!-- Footer End -->
 
-
+<!-- feather -->
+<script>
+  feather.replace();
+</script>
 <!-- data aos -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
