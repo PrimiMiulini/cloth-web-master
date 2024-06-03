@@ -27,7 +27,7 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
       crossorigin="anonymous"
     />
     <!-- Local css -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <!-- data aos -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>

@@ -25,34 +25,6 @@ document.getElementById('close-chart').addEventListener('click', function() {
     document.getElementById('chart-list').classList.remove('active');
 });
 
-// Function to add an item to the chart list for demonstration
-function addItemToChart(name, price, imageUrl) {
-    const itemRow = document.createElement('div');
-    itemRow.className = 'row';
-  
-    const itemImageCol = document.createElement('div');
-    itemImageCol.className = 'col';
-    const itemImage = document.createElement('img');
-    itemImage.src = imageUrl;
-    itemImage.alt = name;
-    itemImage.width = 50;
-    itemImage.height = 50;
-    itemImageCol.appendChild(itemImage);
-  
-    const itemDetailsCol = document.createElement('div');
-    itemDetailsCol.className = 'col';
-    const itemName = document.createElement('h5');
-    itemName.textContent = name;
-    const itemPrice = document.createElement('p');
-    itemPrice.textContent = `$${price}`;
-    itemDetailsCol.appendChild(itemName);
-    itemDetailsCol.appendChild(itemPrice);
-  
-    itemRow.appendChild(itemImageCol);
-    itemRow.appendChild(itemDetailsCol);
-  
-    document.querySelector('.chart-items').appendChild(itemRow);
-  }
 
 function loadPage(pageNumber) {
     const productContainer = document.getElementById('product-container');

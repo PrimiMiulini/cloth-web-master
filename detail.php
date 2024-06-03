@@ -12,6 +12,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail</title>
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +22,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Local css -->
     <link rel="stylesheet" href="css/detail.css">
+    <!-- data aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     
@@ -33,12 +37,14 @@
 
     <!-- Main Start -->
     <main id="main" class="main mb-4">
+      <!-- arrow to back -->
+      <a href="home.php"><p class="ms-4 p-4"><i data-feather="arrow-left-circle"></i></p></a>
       <div class="container">
         <div class="row d-flex flex-row">
           <div class="col">
             <div class="row">
               <div class="col text-end">
-                <img src="<?= $produk['gambar']?>" alt="" width="150">
+                <img src="product/<?= $produk['gambar']?>" alt="" width="150">
               </div>
             </div>
           </div>
@@ -146,6 +152,15 @@
     </footer>
     <!-- Footer End -->
 
+<!-- data aos -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- feather icons -->
+    <script>
+      feather.replace();
+    </script>
 <!-- js -->
 <script src="js/index.js"></script>
 <!-- Bootstrap js -->
