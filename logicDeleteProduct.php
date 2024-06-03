@@ -22,7 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
 $query = mysqli_query($conn, "SELECT * FROM detail_product");
 $products = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 $_SESSION['products'] = $products;
 
 header('Location: deleteProduct.php');

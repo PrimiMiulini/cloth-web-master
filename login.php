@@ -16,7 +16,9 @@ if ($stmt_admin->num_rows > 0) {
     $stmt_admin->fetch();
 
     if (password_verify($pwd, $hashed_password)) {
-        session_start();
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
         $_SESSION['user_id'] = $id;
         $_SESSION['username'] = $username;
         header("Location: adminHome.php");
@@ -40,7 +42,9 @@ if ($stmt_admin->num_rows > 0) {
         $stmt_customer->fetch();
 
         if (password_verify($pwd, $hashed_password)) {
-            session_start();
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
             $_SESSION['user_id'] = $id;
             $_SESSION['username'] = $username;
             header("Location: home.php");
