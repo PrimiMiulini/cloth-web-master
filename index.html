@@ -17,10 +17,10 @@
 <body>
 
     <!-- Navbar start -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">an></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" da
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
         <div class="container">
-          <a class="navbar-brand" href="index.php">SHOP<span class="text-primary">A</spta-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand" href="index.php">SHOP<span class="text-primary">A</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -46,10 +46,10 @@
     <!-- Navbar End -->
 
     <!-- Hero -->
-    <section class="hero border">
+    <section class="hero">
         <main class="content">
           <form action="login.php" method="post">
-            <h1 class="text-center"><span class="text-success">Login</span></h1>
+            <h1 class="text-center"><span class="">Login</span></h1>
             <p style="font-style: italic; color: red;">please valid input</p>
             <div class="row ms-auto justify-content-center align-items-end mb-4">
                 <div class="col-md-5">
@@ -59,14 +59,14 @@
             </div>
             <div class="row ms-auto justify-content-center align-items-end mb-2">
                 <div class="col-md-5">
-                    <label for="Username">Password :</label>
-                    <input class="form form-control-sm"  type="password" name="pwd" id="pwd" placeholder="password" required autocomplete="off">
+                    <label for="pwd">Password :</label>
+                    <input class="form form-control-sm" type="password" name="pwd" id="pwd" placeholder="password" required autocomplete="off">
                 </div>
             </div>
             <div class="row ms-auto justify-content-center align-items-end mb-2">
                 <div class="col-md-5">
                     <a href="signUp.html" class="text-white mb-2" style="text-decoration: none;" onclick=" return confirm('SignUp?'); ">Dont have an account?</a>
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-success" name="submit">Submit</button>
                 </div>
             </div>
           </form>

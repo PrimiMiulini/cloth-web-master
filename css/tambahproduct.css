@@ -1,0 +1,49 @@
+:root{
+    --primary: #cfc8be;
+    --bg: #000;
+}
+
+*{
+    margin: 0; 
+    padding: 0;
+    outline: 0;
+    border: none;
+    box-sizing: border-box;
+    text-decoration:none;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: 'Montserrat','Lato';
+    font-size: 10pt;
+}
+
+/* Navbar */
+
+/* main */
+#main{
+    width: 100%;
+    height: 100vh;
+    background-image:url('../img/hero/hero3.jpg');
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main .content {
+    padding: 2rem;
+    color: #fff;
+    width: 500px;
+    height: 550px;
+    text-align: start;
+    border: 1px solid black;
+    border-radius: 2%;
+    background-color: rgb(0 0 200 / 62%); 
+    box-shadow: 0px 40px 30px -20px black;
+}

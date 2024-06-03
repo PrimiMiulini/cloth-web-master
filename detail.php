@@ -29,10 +29,9 @@
     
     <!-- Navbar start -->
     <?php include 'navbar.php'?>
-        <!-- List Chart -->
-        <?php include 'templateChart.php'?>
-        <!-- List Chart End -->
-      </nav>
+      <!-- List Chart -->
+      <?php include 'templateChart.php'?>
+      <!-- List Chart End -->
     <!-- Navbar End -->
 
     <!-- Main Start -->

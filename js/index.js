@@ -4,8 +4,8 @@ window.addEventListener('scroll', function() {
     const currentPage = window.location.pathname.split('/').pop(); // Mendapatkan nama file dari URL
     if (window.scrollY > 0) {
         navbar.classList.add('navbar-dark', 'bg-dark');
-    } else if(window.scrollY == 0) {
-        if(currentPage == 'detail.php'){
+    }else if(window.scrollY == 0) {
+        if(currentPage == 'detail.php' || currentPage == 'deleteProduct.php'){
             navbar.classList.remove('');
         }else{
             navbar.classList.remove('bg-dark');

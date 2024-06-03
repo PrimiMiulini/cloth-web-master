@@ -8,5 +8,3 @@ if(isset($_POST['logout'])) {
     exit; 
 }
 ?>
-
-
