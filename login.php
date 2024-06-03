@@ -21,7 +21,7 @@ if ($stmt_admin->num_rows > 0) {
         }
         $_SESSION['user_id'] = $id;
         $_SESSION['username'] = $username;
-        header("Location: adminHome.php");
+        header("Location: homeadmin.php");
         exit();
     } else {
         echo "<script>
