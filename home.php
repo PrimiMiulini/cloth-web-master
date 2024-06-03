@@ -117,7 +117,7 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
             <div data-aos="flip-right" data-aos-delay="100" data-aos-offset="250" data-aos-duration="1500" class="col-md-3">
                 <form action="detail.php" method="get">
                     <a href="detail.php?gambar=<?= $prd['gambar'] ?>" class="product-link">
-                        <img src="product/<?= $prd['gambar'] ?>" alt="" width="150">
+                        <img src="<?= $prd['gambar'] ?>" alt="" width="150">
                     </a>
                     <h4><?= $prd['nama_produk'] ?></h4>
                     <p>Rp. <?= number_format($prd['harga'], 0, ',', '.'); ?></p>

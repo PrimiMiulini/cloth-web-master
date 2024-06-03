@@ -44,7 +44,7 @@
           <div class="col">
             <div class="row">
               <div class="col text-end">
-                <img src="product/<?= $produk['gambar']?>" alt="" width="150">
+                <img src="<?= $produk['gambar']?>" alt="" width="150">
               </div>
             </div>
           </div>

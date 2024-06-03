@@ -1,3 +1,9 @@
+<?php
+require 'connection.php';
+
+$cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,7 +78,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr class="table table-dark text-white">
-                            <th>Brand</th>
+                            <th>Picture</th>
                             <th>Product</th>
                             <th>Price</th>
                             <th>Quantity</th>
@@ -80,13 +86,26 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <?php
+                    $totalOrder = 0;
+                    $qty = 0;
+                    $ongkir = 15000;
+
+                    foreach ($cartItems as $index => $item) {
+                        $subtotal = $item['price'] * $item['quantity'];
+
+                        $totalOrder += $subtotal;
+                        $qty += $item['quantity'];
+
+                        ?>
                         <tr>
-                            <td><img src="img/mockup.jpg" alt="" width="50"></td>
-                            <td>Basic Jeans</td>
-                            <td>$150.000</td>
-                            <td>1</td>
-                            <td>$150.000</td>
+                            <td><img src="<?php echo $item['image']; ?>" alt="" width="50"></td>
+                            <td><?php echo $item['name']; ?></td>
+                            <td>Rp. <?php echo number_format($item['price'], 2); ?></td>
+                            <td><?php echo $item['quantity']; ?></td>
+                            <td>Rp. <?php echo number_format($subtotal, 2); ?></td>
                         </tr>
+                    <?php } ?>
                     </tbody>
                 </table>
               </div>
@@ -96,7 +115,7 @@
                 <p>Total Pesanan =</p>
               </div>
               <div class="col">
-                <h5>$150.000</h5>
+                <h5>Rp. <?= number_format($totalOrder,2);?></h5>
               </div>
             </div>
             <div class="row">
@@ -104,7 +123,7 @@
                 <h6>Metode Pemabayaran</h6>
               </div>
               <div class="col">
-                <form action="">
+                <form action="" method="post">
                   <select id="paymentmethod" class="form-select form-select-sm" aria-label="Small select example" onchange="updateShipping()">
                     <option selected>Select</option>
                     <option value="1">COD</option>
@@ -119,21 +138,20 @@
                   <table class="table">
                     <tbody>
                       <tr>
-                        <td>Subtotal</td>
-                        <td>$150</td>
+                        <td>Quantity</td>
+                        <td><?= $qty ?></td>
                       </tr>
                       <tr>
                         <td>Ongkir</td>
-                        <td id="Ongkir"></td>
+                        <td id="Ongkir"> Rp. <?= number_format($ongkir,2)?></td>
                       </tr>
                       <tr>
                         <td>Total Pemabayaran</td>
-                        <td id="totalPayment">$159.000</td>
+                        <td id="totalPayment">Rp. <?= number_format($ongkir + $totalOrder,2)?></td>
                       </tr>
                       <tr>
                         <td colspan="2">
                           <a href="" class="btn btn-outline-success">PAY</a>
-                          <button type="submit" href="" class="btn-close" title="cancel"></button>
                         </td>
                       </tr>
                     </tbody>

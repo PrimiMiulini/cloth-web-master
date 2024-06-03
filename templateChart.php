@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['cancel'])) {
                 <?php foreach ($_SESSION['cart'] as $item): ?>
                     <div class="row chart-items">
                         <div class="col">
-                            <img src="product/<?= htmlspecialchars($item['image']) ?>" alt="" width="50" height="50">
+                            <img src="<?= htmlspecialchars($item['image']) ?>" alt="" width="50" height="50">
                         </div>
                         <div class="col-6">
                             <h6><?= htmlspecialchars($item['name']) ?></h6>

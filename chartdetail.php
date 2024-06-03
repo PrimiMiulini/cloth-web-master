@@ -1,7 +1,6 @@
 <?php
 require 'connection.php';
 
-// Mendapatkan data keranjang dari sesi
 $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 ?>
 
@@ -141,26 +140,29 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
     <!-- cart table end -->
 
     <!-- Cart total -->
-    <section id="ct" class="ct">
-        <div class="container w-25 p-3">
-            <h4>CART TOTAL</h4>
-            <form action="" method="post">
-                <table class="table table-hover">
-                    <tbody>
-                        <tr>
-                            <td>Total</td>
-                            <td>
-                            <?= number_format(array_sum(array_map(function($item) {
-                                return $item['price'] * $item['quantity'];
-                            }, $cartItems)), 0, ',', '.') ?>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button type="submit" class="btn btn-outline-success">CHECKOUT</button>
-            </form>
-        </div>
-    </section>
+    <!-- Cart total -->
+<section id="ct" class="ct">
+    <div class="container w-25 p-3">
+        <h4>CART TOTAL</h4>
+        <form action="checkout.php" method="post"> <!-- Tambahkan action ke resi.html -->
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <td>Total</td>
+                        <td>
+                        <?= number_format(array_sum(array_map(function($item) {
+                            return $item['price'] * $item['quantity'];
+                        }, $cartItems)), 0, ',', '.') ?>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-outline-success">CHECKOUT</button>
+        </form>
+    </div>
+</section>
+<!-- Cart total End -->
+
     <!-- Cart total End -->
 
     <!-- Content Start -->
