@@ -34,6 +34,7 @@ $products = $_SESSION['products'];
 </head>
 <body>
     <h2>Product Table</h2>
+    <button type="button" class="btn btn-secondary" onclick="window.location.href='homeAdmin.php';">Kembali</button>
     <form action="logicDeleteProduct.php" method="post">
         <table>
             <thead>

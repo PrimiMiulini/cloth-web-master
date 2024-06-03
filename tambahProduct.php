@@ -38,6 +38,7 @@
         </div>
         <br>
         <div>
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='homeAdmin.php';">Kembali</button>
             <button type="submit">Submit</button>
         </div>
     </form>
