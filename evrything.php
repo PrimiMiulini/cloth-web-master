@@ -37,8 +37,8 @@ $totalItems = getProductCount($keyword);
 <body>
 
     <!-- Navbar start -->
-    <?php include 'templateChart.php';?>
     <?php include 'navbar.php';?>
+    <?php include 'templateChart.php';?>
       <!-- List Chart -->
       <!-- List Chart End -->
     <!-- Navbar End -->
