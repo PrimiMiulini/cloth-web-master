@@ -32,6 +32,15 @@
     <?php require 'navbar.php'; ?>
     <!-- Navbar End -->
 
+    <!-- hero start -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="row">
+        </div>
+      </div>
+    </section>
+    <!-- hero end -->
+
     <!-- About Start -->
     <section id="about" class="about m-4 p-4">
       <div class="container p-4">
@@ -48,8 +57,37 @@
             <h5>SHOP<span>A</span></h5>
             <h6>We Are Cloth Company </h6>
             <p>Our product base on australia melbourne, we put quality in every shape for customer. Here's a well-crafted "About Us" section in English for a fashion e-commerce website:
-            Welcome to [Your Brand Name], where style meets passion. Born from a love for fashion and a desire to make high-quality, trendsetting pieces accessible to all, our journey began in [Year] with a simple idea: to empower individuals through clothing that reflects their unique personalities.
-            At [Your Brand Name], we believe that fashion is more than just fabric—it's a form of self-expression. Our team of dedicated designers scours the globe for the latest trends, curating a collection that spans from timeless classics to avant-garde statements. Whether you're dressing for the boardroom, a night out, or a casual weekend, we have something to suit every occasion and style.</p>
+            Welcome to SHOPA, where style meets passion. Born from a love for fashion and a desire to make high-quality, trendsetting pieces accessible to all, our journey began in 2024 with a simple idea: to empower individuals through clothing that reflects their unique personalities.
+            At SHOPA, we believe that fashion is more than just fabric—it's a form of self-expression. Our team of dedicated designers scours the globe for the latest trends, curating a collection that spans from timeless classics to avant-garde statements. Whether you're dressing for the boardroom, a night out, or a casual weekend, we have something to suit every occasion and style.</p>
+          </div>
+          <div class="col-xl-7">
+            <div class="row align-items-center">
+              <div class="col-md">
+                <h5>Our Partner</h5>
+                <ul>
+                  <li>
+                    <img src="img/content/master-c.png" width="150">
+                  </li>
+                  <li>
+                    <img src="img/content/pp.png" width="150">
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-md">
+                <ul>
+                  <li>
+                    <P class="mb-4">WE SAVE YOUR DATA!</P>
+                    <i data-feather="lock" width="50" class="mb-4"></i>
+                  </li>
+                  <li>
+                    <P class="mb-4">WE PUT STABILIZE NETWORK!</P>
+                    <i data-feather="activity" width="50"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div class="row align-items-center">
           <div class="col-md">
