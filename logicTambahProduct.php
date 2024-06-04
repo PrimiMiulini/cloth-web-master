@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $check = getimagesize($_FILES['gambar']['tmp_name']);
 
     if ($check !== false) {
-        $allowedTypes = array('jpg', 'jpeg', 'png', 'gif');
+        $allowedTypes = array('webp','jpg', 'jpeg', 'png', 'gif');
         if (in_array($imageFileType, $allowedTypes)) {
             if (!is_dir($target_dir)) {
                 mkdir($target_dir, 0755, true);

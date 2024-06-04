@@ -26,7 +26,7 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
     <!-- Navbar start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
         <div class="container">
-          <a class="navbar-brand" href="index.html">SHOP<span class="text-primary">A</span></a>
+          <a class="navbar-brand" href="home.php">SHOP<span class="text-primary">A</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -167,7 +167,7 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
     <section id="content" class="content">
         <div class="container">
           <h1>Gracias!</h1>
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-main">
               <h3>SHOPA</h3>
               <P>The best look anytime, anywhere.</P>
@@ -175,8 +175,8 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
             <div class="col">
               <h3>Relation</h3>
               <ul>
-                <li><img src="img/content/master-c.png" alt="" width="100"></li>
-                <li><img src="img/content/pp.png" alt="" width="100"></li>
+                <li><img src="img/content/master-c.png" alt="" width="80"></li>
+                <li><img src="img/content/pp.png" alt="" width="80"></li>
               </ul>
             </div>
           </div>
@@ -189,11 +189,9 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
           <div class="container">
               <div class="row">
                 <div class="col">
-                  <p>All right reserved <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
+                  <p class="text-center">All right reserved <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
                     <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512"/>
-                  </svg> 2024</p>
-                </div>
-                <div class="col">
+                  </svg> <span class="text-warning"> 2024 </span></p>
                   <ul class="social-icons">
                     <li>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
