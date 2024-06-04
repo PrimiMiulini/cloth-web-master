@@ -21,6 +21,12 @@ body {
   transition: background 0.3s ease;
 }
 
+#mainNavbar .container a, .navbar-nav .nav-item a{
+
+  /* color: black; */
+
+}
+
 /* Chart List */
 #chart-list {
   position: fixed;
@@ -43,9 +49,40 @@ body {
   overflow-y: auto;
 }
 
+#hero{
+  height: 60vh;
+    background-image: url(../img/hero/hero3.jpg);
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#hero:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 0) 30%);
+}
+
 /* about */
+#about .container{
+  margin-top: 1rem;
+}
+
 #about .container h2 {
   text-shadow: 4px 0px 4px rgb(62 22 101);
+}
+
+#about .container .row .col-md ul li{
+
+  list-style-type: none;
+
 }
 
 /* content */

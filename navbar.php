@@ -20,7 +20,7 @@ include 'connection.php';
     <?php elseif( basename($_SERVER['PHP_SELF']) == 'deleteProduct.php' ) : ?>
       <nav class="navbar navbar-expand-lg fixed-top mb-5" id="mainNavbar">
     <?php elseif( basename($_SERVER['PHP_SELF']) == 'about.php' ) : ?>
-      <nav class="navbar navbar-expand-lg fixed-top mb-5" id="mainNavbar">
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top mb-5" id="mainNavbar">
     <?php endif; ?>
       <div class="container">
         <a class="navbar-brand" href="home.php">SHOP<span class="text-primary">A</span></a>
