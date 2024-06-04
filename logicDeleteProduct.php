@@ -5,11 +5,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
     $deleteIds = $_POST['delete'];
 
     foreach ($deleteIds as $id) {
-        $queryImage = mysqli_query($conn, "SELECT gambar FROM detail_product WHERE id_produk=" . intval($id));
+        $id = intval($id); // Ensure the ID is an integer
+        $queryImage = mysqli_query($conn, "SELECT gambar FROM detail_product WHERE id_produk=$id");
         $imageRow = mysqli_fetch_assoc($queryImage);
-        $imagePath = '' . $imageRow['gambar'];
+        $imagePath = $imageRow['gambar'];
 
-        $queryDelete = mysqli_query($conn, "DELETE FROM detail_product WHERE id_produk=" . intval($id));
+        $queryDelete = mysqli_query($conn, "DELETE FROM detail_product WHERE id_produk=$id");
 
         if ($queryDelete) {
             if (file_exists($imagePath)) {

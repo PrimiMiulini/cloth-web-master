@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($stmt->execute()) {
                         echo "<script>
                             alert('Produk berhasil ditambahkan');
-                            window.location.href = 'tambahproduct.html';
+                            window.location.href = 'tambahproduct.php';
                           </script>";
                     } else {
                         echo "Error: " . $stmt->error;

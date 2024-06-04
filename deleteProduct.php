@@ -79,21 +79,21 @@ $products = $_SESSION['products'];
                                 <?php foreach ($products as $row) : ?>
                                     <tr>
                                         <td><?= $no; ?></td>
-                                        <td><img src='product/<?=  htmlspecialchars($row['gambar'])  ?>' alt='Product Image' width="50"></td>
+                                        <td><img src="<?= htmlspecialchars($row['gambar']) ?>" alt="Product Image" width="50"></td>
                                         <td><?= htmlspecialchars($row['nama_produk']); ?></td>
                                         <td><?= htmlspecialchars($row['deskripsi']); ?></td>
-                                        <td>Rp.<?= number_format($row['harga'], 0, ',', '.');  ?></td>
+                                        <td>Rp.<?= number_format($row['harga'], 0, ',', '.'); ?></td>
                                         <td><?= htmlspecialchars($row['role']) ?></td>
-                                        <td><input type='checkbox' name='delete[]' value='" . intval($row['id_produk']) . "'></td>
+                                        <td><input type="checkbox" name="delete[]" value="<?= intval($row['id_produk']) ?>"></td>
                                     </tr>
-                                <?php $no++;  ?>
+                                    <?php $no++; ?>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
                         <button type="submit" class="btn btn-outline-success btn-sm">Delete Selected</button>
-                        <form action="logicDeleteProduct.php" method="post" style="margin-top: 20px;">
-                            <button type="submit" class="btn btn-outline-success btn-sm">Refresh</button>
-                        </form>
+                    </form>
+                    <form action="logicDeleteProduct.php" method="post" style="margin-top: 20px;">
+                        <button type="submit" class="btn btn-outline-success btn-sm">Refresh</button>
                     </form>
                 </div>
             </div>
@@ -119,6 +119,6 @@ $products = $_SESSION['products'];
 </body>
 </html>
 <?php
-// Clear products data from session
+// Clear products data from session after the HTML has been rendered
 unset($_SESSION['products']);
 ?>
