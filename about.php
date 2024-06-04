@@ -1,103 +1,95 @@
-<?php
-require 'funcEvrything.php';
-$product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cloth Shop</title>
+    <title>About</title>
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
-    <!-- Google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Google fonts-->
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
       rel="stylesheet"
+      type="text/css"
     />
-    <!-- bootstrap -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
       rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      type="text/css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <!-- Local css -->
-    <link rel="stylesheet" href="css/homeadmin.css"/>
-    <!-- data aos -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- My Css -->
+    <link rel="stylesheet" href="css/about.css" />
   </head>
-<body class="index-page">
+  <body>
     <!-- Navbar start -->
     <?php require 'navbar.php'; ?>
-    <?php require 'templateChart.php'; ?>
     <!-- Navbar End -->
-
-    <!-- hero Start -->
-    <section class="hero">
-      <main class="content">
-        <h2>Wellcome admin <?= $_SESSION["username"];  ?></h2>
-        <div class="clear"></div>
-        <a href="tambahProduct.php" class="btn btn-outline-primary">GO SHOP NOW</a>
-      </main>
-    </section>
-    <!-- hero End -->
 
     <!-- About Start -->
     <section id="about" class="about m-4 p-4">
       <div class="container p-4">
-        <h2 class="text-center mb-4" data-aos="fade-down" data-aos-offset="250" data-aos-duration="1500">ABOUT OUR PRODUCT</h2>
-        <div class="row align-items-center">
+        <h2
+          class="text-center mb-4"
+          data-aos="fade-down"
+          data-aos-offset="250"
+          data-aos-duration="1500"
+        >
+          ABOUT OUR PRODUCT
+        </h2>
+        <div class="row">
+          <div class="col-xl-5">
+            <h5>SHOP<span>A</span></h5>
+            <h6>We Are Cloth Company </h6>
+            <p>Our product base on australia melbourne, we put quality in every shape for customer. Here's a well-crafted "About Us" section in English for a fashion e-commerce website:
+            Welcome to [Your Brand Name], where style meets passion. Born from a love for fashion and a desire to make high-quality, trendsetting pieces accessible to all, our journey began in [Year] with a simple idea: to empower individuals through clothing that reflects their unique personalities.
+            At [Your Brand Name], we believe that fashion is more than just fabric—it's a form of self-expression. Our team of dedicated designers scours the globe for the latest trends, curating a collection that spans from timeless classics to avant-garde statements. Whether you're dressing for the boardroom, a night out, or a casual weekend, we have something to suit every occasion and style.</p>
+          </div>
+          <div class="row align-items-center">
           <div class="col-md">
-            <img data-aos="flip-right" data-aos-offset="400" data-aos-delay="150" data-aos-duration="1500" src="img/hero/hero4.jpg" class="float-md-start me-4" alt="" width="350">
+            <img
+              data-aos="flip-right"
+              data-aos-offset="400"
+              data-aos-delay="150"
+              data-aos-duration="1500"
+              src="img/hero/hero4.jpg"
+              class="float-md-start me-4"
+              alt=""
+              width="350"
+            />
           </div>
           <div class="col-md">
             <h4 class="">SHOP<span class="text-primary">A</span> Company</h4>
-            <h5>We are a company where give a your daily wear, as a company we fully supervise our product and service to customer.</h5>
+            <h5>
+              We are a company where give a your daily wear, as a company we
+              fully supervise our product and service to customer.
+            </h5>
             <p><i data-feather="award" class="me-2"></i>We put quality first</p>
-            <p><i data-feather="check" class="me-2"></i>We detailing evry shape</p>
-            <p><i data-feather="cloud-lightning" class="me-2"></i>We test a material evrywhere</p>
+            <p>
+              <i data-feather="check" class="me-2"></i>We detailing evry shape
+            </p>
+            <p>
+              <i data-feather="cloud-lightning" class="me-2"></i>We test a
+              material evrywhere
+            </p>
             <h6>We are based on melbourne australia.</h6>
-            <p><i data-feather="map-pin" width="15" class="me-2"></i>Burnswick Town City.</p>
+            <p>
+              <i data-feather="map-pin" width="15" class="me-2"></i>Burnswick
+              Town City.
+            </p>
           </div>
         </div>
       </div>
+      </div>
     </section>
     <!-- About End -->
-
-    <!-- Product Start-->
-    <section id="product" class="product">
-    <h2>New Product</h2>
-    <p data-aos="fade-right-up" data-aos-offset="100" data-aos-duration="1000">Monthly New Product!</p>
-    <div class="row">
-        <?php 
-        $count = 0;
-        foreach ($product as $prd) : ?>
-            <div data-aos="flip-right" data-aos-delay="100" data-aos-offset="250" data-aos-duration="1500" class="col-md-3">
-                <form action="detail.php" method="get">
-                    <a href="detail.php?gambar=<?= $prd['gambar'] ?>" class="product-link">
-                        <img src="<?=$prd['gambar'] ?>" alt="" width="150">
-                    </a>
-                    <h4><?= $prd['nama_produk'] ?></h4>
-                    <p>Rp. <?= number_format($prd['harga'], 0, ',', '.'); ?></p>
-                    <!-- Hidden input to pass product image -->
-                    <input type="hidden" name="gambar" value="<?= $prd['gambar'] ?>">
-                    <!-- Submit button -->
-                    <button type="submit" class="btn btn-outline-success" name="submit">ADD CART</button>
-                </form>
-            </div>
-            <?php 
-            $count++;
-            if ($count % 4 == 0) : ?>
-                </div><div class="row">
-            <?php endif; ?>
-        <?php endforeach; ?>
-    </div>
-    </section>
-    <!-- Product End-->
+    
 
     <!-- Content Start -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
