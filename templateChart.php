@@ -87,9 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['cancel'])) {
                 <div class="row border mb-2">
                     <button type="button" class="btn btn-outline-success" name="chart" onclick="window.location.href='chartdetail.php'">View Cart</button>
                 </div>
-                <div class="row border">
-                    <button type="button" class="btn btn-outline-success" name="Checkout">Checkout</button>
-                </div>
             <?php else: ?>
                 <div class="row">
                     <p>No items in the cart.</p>
