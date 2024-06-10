@@ -71,12 +71,12 @@ $totalItems = getProductCount($keyword, 'man');
 
     <!-- Product Start -->
     <section id="product" class="product"> 
-      <h1>Men Fashion</h1> 
-      <div class="row">
+      <h1>Men Fashion</h1>
+      <div class="row jusfity-content-center">
         <?php 
         $count = 0;
         foreach ($product as $prd) : ?>
-          <div data-aos="flip-down" data-aos-delay="100" data-aos-offset="100" data-aos-duration="1500" class="col-md-3">
+          <div data-aos="fade-zoom-in" data-aos-delay="100" data-aos-offset="250" data-aos-duration="1500" class="col-md-3 text-center">
             <!-- Form untuk mengarahkan ke detail produk -->
             <form action="detail.php" method="get">
               <input type="hidden" name="gambar" value="<?=$prd['gambar']?>">
@@ -90,9 +90,8 @@ $totalItems = getProductCount($keyword, 'man');
           </div>
           <?php 
           $count++;
-          if ($count % 4 == 0) : ?>
-            </div>
-            <div class="row">
+          if ($count % 3 == 0) : ?>
+            </div><div class="row">
           <?php endif; ?>
         <?php endforeach; ?>
       </div>

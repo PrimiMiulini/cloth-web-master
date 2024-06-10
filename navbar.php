@@ -48,7 +48,7 @@ include 'connection.php';
           <ul class="navbar-nav align-items-center ms-auto">
             <li class="nav-item">
               <?php if(basename($_SERVER['PHP_SELF']) == 'homeadmin.php') : ?>
-                <a class="nav-link" aria-current="page" href="tambahProduct.php" id="plus">
+                <a class="nav-link" aria-current="page" href="addAdmin.php" id="plus">
                   <i data-feather="plus"></i>
                 </a>
                 <?php else: ?>

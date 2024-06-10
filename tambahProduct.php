@@ -27,6 +27,8 @@
 </head>
 <body>
 
+    <?php require 'navbaradmin.php' ; ?>
+
     <section class="main" id="main">
         <main class="content" id="">
             <h2>Form Produk</h2>

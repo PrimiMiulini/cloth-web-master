@@ -40,8 +40,7 @@ $products = $_SESSION['products'];
 <body>
 
     <!-- Navbar start -->
-    <?php require 'navbar.php'; ?>
-    <?php require 'templateChart.php'; ?>
+    <?php require 'navbaradmin.php'; ?>
     <!-- Navbar End -->
 
     <section class="main" id="main">
@@ -51,19 +50,12 @@ $products = $_SESSION['products'];
                 <div class="col-md">
                     <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='homeAdmin.php';">Kembali</button>
                 </div>
-                <div class="col-md">
-                    <label for="number">Show previous product</label>
-                    <input type="number" id="number" value="1" class="text-center border custom-input">
-                </div>
-                <div class="col-md text-center">
-                    <i data-feather="arrow-down-circle"></i>
-                </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mt-4">
                 <div class="col-md-10">
                     <form action="logicDeleteProduct.php" method="post">
                         <table class="table">
-                            <thead class="table-info">
+                            <thead class="table-dark">
                                 <tr>
                                     <th>No.</th>
                                     <th>Image</th>
@@ -74,10 +66,10 @@ $products = $_SESSION['products'];
                                     <th>Delete</th>
                                 </tr>
                             </thead>
-                            <tbody class="">
+                            <tbody class="table table-hover">
                                 <?php $no = 1; ?>
                                 <?php foreach ($products as $row) : ?>
-                                    <tr>
+                                    <tr class="table-warning">
                                         <td><?= $no; ?></td>
                                         <td><img src="<?= htmlspecialchars($row['gambar']) ?>" alt="Product Image" width="50"></td>
                                         <td><?= htmlspecialchars($row['nama_produk']); ?></td>

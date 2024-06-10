@@ -42,8 +42,8 @@
         <div class="row d-flex flex-row">
           <div class="col">
             <div class="row">
-              <div class="col text-end">
-                <img src="<?= $produk['gambar']?>" alt="" width="150">
+              <div class="col text-center">
+                <img src="<?= $produk['gambar']?>" alt="" width="250">
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@
             <p><?= $produk['role']?></p>
             <h2><?= $produk['nama_produk']?></h2>
             <h4>Rp.<?= number_format( $produk['harga'], 0,',','.'); ?></h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, illum?</p>
+            <p><?= $produk['deskripsi']?></p>
             <!-- Form add to cart -->
             <!-- Form add to cart -->
             <form action="templateChart.php" method="post">
@@ -75,8 +75,6 @@
         <nav>
           <ul>
             <li><a href="" class="">DESCRIPTION</a></li>
-            <li><a href="" class="">ADDTIONAL INFO</a></li>
-            <li><a href="" class="">REVIEW</a></li>
           </ul>
         </nav>
         <div class="row">
@@ -84,7 +82,7 @@
         </div>
         <div class="row">
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, eligendi.
+          <?= $produk['deskripsi']?>
           </p>
         </div>
       </h>

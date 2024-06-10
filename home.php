@@ -41,7 +41,7 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="evrything.php">EVRYTHING</a></li>
+                <li class="nav-item"><a class="nav-link" href="evrything.php">EVERYTHING</a></li>
                 <li class="nav-item"><a class="nav-link" href="women.php">WOMEN</a></li>
                 <li class="nav-item"><a class="nav-link" href="men.php">MEN</a></li>
                 <li class="nav-item"><a class="nav-link" href="accessories.php">ACCESSORIES</a></li>
@@ -49,7 +49,7 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
           </div>
           <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto">
-                  <li class="nav-item"><a class="nav-link active" href="#">ABOUT</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="about.php">ABOUT</a></li>
                   <li class="nav-item"><a class="nav-link active" href="#">CONTACT US</a></li>
                   <li class="nav-item">
                       <a class="nav-link" href="#" id="chart">

@@ -75,42 +75,42 @@ $totalItems = getProductCount($keyword, 'woman');
 
     <!-- Product Start -->
     <section id="product" class="product"> 
-  <h1>Women Fashion</h1> 
-  <div class="row">
-    <?php 
-    $count = 0;
-    foreach ($product as $prd) : ?>
-      <div data-aos="flip-right" data-aos-delay="100" data-aos-offset="50" data-aos-duration="1000" class="col-md-3">
-        <!-- Form untuk mengarahkan ke detail produk -->
-        <form action="detail.php" method="get">
-          <input type="hidden" name="gambar" value="<?=$prd['gambar']?>">
-          <a href="detail.php?gambar=<?=$prd['gambar']?>" class="product-link">
-            <img src="<?=$prd['gambar'] ?>" alt="" width="150">
-          </a>
-          <h4><?= $prd['nama_produk'] ?></h4>
-          <p>Rp. <?= number_format($prd['harga'], 0, ',', '.'); ?></p>
-          <button type="submit" class="btn btn-outline-success">ADD CART</button>
-        </form>
+      <h1>Women Fashion</h1>
+      <div class="row jusfity-content-center">
+        <?php 
+        $count = 0;
+        foreach ($product as $prd) : ?>
+          <div data-aos="fade-zoom-in" data-aos-delay="100" data-aos-offset="250" data-aos-duration="1500" class="col-md-3 text-center">
+            <!-- Form untuk mengarahkan ke detail produk -->
+            <form action="detail.php" method="get">
+              <input type="hidden" name="gambar" value="<?=$prd['gambar']?>">
+              <a href="detail.php?gambar=<?=$prd['gambar']?>" class="product-link">
+                <img src="<?=$prd['gambar'] ?>" alt="" width="150">
+              </a>
+              <h4><?= $prd['nama_produk'] ?></h4>
+              <p>Rp. <?= number_format($prd['harga'], 0, ',', '.'); ?></p>
+              <button type="submit" class="btn btn-outline-success">ADD CART</button>
+            </form>
+          </div>
+          <?php 
+          $count++;
+          if ($count % 3 == 0) : ?>
+            </div><div class="row">
+          <?php endif; ?>
+        <?php endforeach; ?>
       </div>
-      <?php 
-      $count++;
-      if ($count % 4 == 0) : ?>
-        </div><div class="row">
-      <?php endif; ?>
-    <?php endforeach; ?>
-  </div>
-  <div class="pagination">
-    <?php if ($page > 1) : ?>
-        <a href="?page=<?= $page - 1 ?>" class="page-link">&laquo; Previous</a>
-    <?php endif; ?>
-    <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
-        <a href="?page=<?= $i ?>" class="page-link <?= ($i == $page) ? 'active' : '' ?>"><?= $i ?></a>
-    <?php endfor; ?>
-    <?php if ($page < $totalPages) : ?>
-        <a href="?page=<?= $page + 1 ?>" class="page-link">Next &raquo;</a>
-    <?php endif; ?>
-</div>
-</section>
+      <div class="pagination">
+        <?php if ($page > 1) : ?>
+            <a href="?page=<?= $page - 1 ?>" class="page-link">&laquo; Previous</a>
+        <?php endif; ?>
+        <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+            <a href="?page=<?= $i ?>" class="page-link <?= ($i == $page) ? 'active' : '' ?>"><?= $i ?></a>
+        <?php endfor; ?>
+        <?php if ($page < $totalPages) : ?>
+            <a href="?page=<?= $page + 1 ?>" class="page-link">Next &raquo;</a>
+        <?php endif; ?>
+      </div>
+    </section>
     <!-- Product End -->
 
     <!-- Content Start -->

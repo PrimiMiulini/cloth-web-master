@@ -32,8 +32,7 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
   </head>
 <body class="index-page">
     <!-- Navbar start -->
-    <?php require 'navbar.php'; ?>
-    <?php require 'templateChart.php'; ?>
+    <?php require 'navbaradmin.php'; ?>
     <!-- Navbar End -->
 
     <!-- hero Start -->
@@ -41,7 +40,8 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
       <main class="content">
         <h2>Wellcome admin <?= $_SESSION["username"];  ?></h2>
         <div class="clear"></div>
-        <a href="tambahProduct.php" class="btn btn-outline-primary">GO SHOP NOW</a>
+        <a href="tambahProduct.php" class="btn btn-outline-primary text-white me-2">ADD PRODUCT</a>
+        <a href="deleteProduct.php" class="btn btn-outline-primary text-white">DELETE PRODUCT</a>
       </main>
     </section>
     <!-- hero End -->

@@ -62,24 +62,22 @@
           </div>
           <div class="col-xl-7">
             <div class="row align-items-center">
-              <div class="col-md">
+              <div class="col-md text-center">
                 <h5>Our Partner</h5>
-                <ul>
-                  <li>
-                    <img src="img/content/master-c.png" width="150">
-                  </li>
-                  <li>
-                    <img src="img/content/pp.png" width="150">
-                  </li>
-                </ul>
+              <div class="col-md text-center">
+                <img src="img/content/master-c.png" width="100">
+              </div>
+              <div class="col-md text-center">
+                <img src="img/content/pp.png" width="100">
+              </div>
               </div>
             </div>
             <div class="row align-items-center">
-              <div class="col-md">
+              <div class="col-md text-center">
                 <ul>
                   <li>
-                    <P class="mb-4">WE SAVE YOUR DATA!</P>
-                    <i data-feather="lock" width="50" class="mb-4"></i>
+                    <P class="mt-4 mb-4">WE SAVE YOUR DATA!</P>
+                    <i data-feather="lock" width="50" class="mb-4 "></i>
                   </li>
                   <li>
                     <P class="mb-4">WE PUT STABILIZE NETWORK!</P>
