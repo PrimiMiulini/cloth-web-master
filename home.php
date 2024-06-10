@@ -50,7 +50,7 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
           <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto">
                   <li class="nav-item"><a class="nav-link active" href="about.php">ABOUT</a></li>
-                  <li class="nav-item"><a class="nav-link active" href="#">CONTACT US</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="contact.php">CONTACT US</a></li>
                   <li class="nav-item">
                       <a class="nav-link" href="#" id="chart">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket3" viewBox="0 0 16 16">
