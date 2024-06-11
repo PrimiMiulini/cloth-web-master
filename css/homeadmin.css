@@ -85,60 +85,55 @@ body{
 }
 
 
-/* Product */
-#product {
-    padding: 6rem;
-    text-align: center;
-}
+/* contactus */
+#contact{
 
-#product .row {
-    width: 100%;
-    padding: .5rem;
-    box-sizing: border-box; 
-}
-
-#product .row .col-md-4 {
-    width: 200px;
-    padding: .5rem;
-    margin-right: 4rem;
-    border: 1px solid black;
-    border-radius: 10%;
-    background-color: rgba(0,0,0,.2);
-    box-sizing: border-box;
-    transition: .5s; /* Ensure padding is included in total width */
-}
-
-#product .row .col-md-4 img{
-    transition: .5s;
-}
-
-#product .row .col-md-4 img:hover{
-    transform: scale(1.5);
-    border-radius: 50%;
-}
-
-#product .row .content nav {
     display: flex;
+    align-items: center;
+    justify-content: center; 
+
+}
+
+#contact .content {
+
+    display: flex;
+    align-items: center;
     justify-content: center;
-    width: 100%;
+    min-width: 80%;
+    padding: 2rem;
+    background-color: #56569d;
+    color: white;
+    transition: .5s ease-in-out;
 }
 
-#product .row .content nav li {
-    list-style-type: none;
-    display: inline-block;
-    margin-right: .5rem;
+#contact .content:hover{
+
+    box-shadow: -1px 1px 5px 5px rgb(0 192 211 / 80%);
+
 }
 
-#product .row .content nav li:last-child {
-    margin-right: 0; /* Remove right margin from the last navigation item */
+#contact .content .row h5{
+    margin-left: -.8rem;
 }
 
-#product .row .content nav li a{
-    transition: .5s;
+#contact .content .row #floatingTextarea {
+
+    max-width: 50%;
+
 }
 
-#product .row .content nav li a:hover{
-    scale: 1.2;
+#contact .content .row nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact .content .row nav ul li a:hover{
+
+    transform: scale(1.1);
+    background: green;
+    border: .5px solid white;
+
 }
 
 /* content */
@@ -252,6 +247,7 @@ body{
     .about .row .content p{
       font-size: 1rem;
     }
+
   
     .product p{
       font-size: 1.2rem;

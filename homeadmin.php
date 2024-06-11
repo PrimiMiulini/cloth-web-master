@@ -1,8 +1,9 @@
 <?php
 require 'funcEvrything.php';
 $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH);");
-?>
 
+require 'contactUsAdmin.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -68,36 +69,34 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
     </section>
     <!-- About End -->
 
-    <!-- Product Start-->
-    <section id="product" class="product">
-    <h2>New Product</h2>
-    <p data-aos="fade-right-up" data-aos-offset="100" data-aos-duration="1000">Monthly New Product!</p>
-    <div class="row">
-        <?php 
-        $count = 0;
-        foreach ($product as $prd) : ?>
-            <div data-aos="flip-right" data-aos-delay="100" data-aos-offset="250" data-aos-duration="1500" class="col-md-3">
-                <form action="detail.php" method="get">
-                    <a href="detail.php?gambar=<?= $prd['gambar'] ?>" class="product-link">
-                        <img src="<?=$prd['gambar'] ?>" alt="" width="150">
-                    </a>
-                    <h4><?= $prd['nama_produk'] ?></h4>
-                    <p>Rp. <?= number_format($prd['harga'], 0, ',', '.'); ?></p>
-                    <!-- Hidden input to pass product image -->
-                    <input type="hidden" name="gambar" value="<?= $prd['gambar'] ?>">
-                    <!-- Submit button -->
-                    <button type="submit" class="btn btn-outline-success" name="submit">ADD CART</button>
-                </form>
-            </div>
-            <?php 
-            $count++;
-            if ($count % 4 == 0) : ?>
-                </div><div class="row">
-            <?php endif; ?>
-        <?php endforeach; ?>
+    <!-- Contactus start  -->
+    <div class="container" id="contact">
+      <div class="content border" data-aos="fade-up" data-aos-offset="50" data-aos-delay="150" data-aos-duration="1500">
+        <div class="row">
+          <h5 class="">Farhan</h5>
+          <textarea class="form-control mb-4" id="floatingTextarea" disabled><?= "bang kalo bikin baju yang bener" ?></textarea>
+          <!-- Pagination Start -->
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
-    </section>
-    <!-- Product End-->
+    <!-- Contactus end  -->
 
     <!-- Content Start -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
