@@ -85,6 +85,21 @@ body {
 
 }
 
+/* Contact us */
+#contact label{
+  font-size: 12pt; 
+  margin-left: .5rem;
+}
+
+#contact #message{
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  max-width: 50rem;
+  min-height: 25rem;
+  border: 1px solid black;
+  border-radius: 2%;
+}
+
 /* content */
 #content {
   margin-top: -0.3rem;

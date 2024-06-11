@@ -1,3 +1,59 @@
+<?php
+require 'connection.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+    $username = $_SESSION['username'];
+    $message = $_POST['message'];
+
+    $stmt = $conn->prepare("SELECT * FROM customer WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $stmt->close();
+
+    if ($result->num_rows > 0) {
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM complaints WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $stmt->bind_result($num_complaints);
+        $stmt->fetch();
+        $stmt->close();
+
+        $max_complaints = 3;
+
+        if ($num_complaints >= $max_complaints) {
+            $stmt = $conn->prepare("SELECT id FROM complaints WHERE username = ? ORDER BY timestamp_column ASC LIMIT 1");
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $stmt->bind_result($oldest_id);
+            $stmt->fetch();
+            $stmt->close();
+
+            if ($oldest_id) {
+                $stmt = $conn->prepare("DELETE FROM complaints WHERE id = ?");
+                $stmt->bind_param("i", $oldest_id);
+                $stmt->execute();
+                $stmt->close();
+            }
+        }
+
+        $stmt = $conn->prepare("INSERT INTO complaints (username, message) VALUES (?, ?)");
+        $stmt->bind_param("ss", $username, $message);
+        $stmt->execute();
+        $stmt->close();
+
+        echo "<script>
+                alert('Masukkan/Saran berhasil ditambahkan ^-^');
+                window.location.href = 'contact.php';
+              </script>";
+        exit();
+    } else {
+        echo '<script>alert("Akun tidak ada");</script>';
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -125,6 +181,40 @@
       </div>
     </section>
     <!-- About End -->
+
+    <!-- ContactUs Start -->
+    <section class="contact" id="contact">
+      <h2 class="text-center">Contact Us</h2>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md">
+            <form action="" method="post">
+
+              <!-- Hidden field to store the username -->
+              <input type="hidden" name="username" value="<?= htmlspecialchars($_SESSION['username']) ?>">
+
+              <div class="row">
+                <!-- Textarea for message -->
+                <label for="message" class="text-success">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required autocomplete="off"></textarea><br><br>
+              </div>
+              <div class="row">
+                <div class="col-md-1">
+                  <!-- Submit button -->
+                  <button type="submit" class="btn btn-outline-success name="submit">Submit</button>
+                </div>
+                <div class="col-md-2">
+                  <!-- Back to Home button -->
+                  <button type="button" class="btn btn-warning" onclick="window.location.href='home.php'">Back to Home</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ContactUs End -->
     
 
     <!-- Content Start -->
