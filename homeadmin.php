@@ -71,31 +71,70 @@ require 'contactUsAdmin.php';
 
     <!-- Contactus start  -->
     <div class="container" id="contact">
-      <div class="content border" data-aos="fade-up" data-aos-offset="50" data-aos-delay="150" data-aos-duration="1500">
-        <div class="row">
-          <h5 class="">Farhan</h5>
-          <textarea class="form-control mb-4" id="floatingTextarea" disabled><?= "bang kalo bikin baju yang bener" ?></textarea>
-          <!-- Pagination Start -->
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
+  <div class="content border" data-aos="fade-up" data-aos-offset="50" data-aos-delay="150" data-aos-duration="1500">
+    <div class="row">
+      <?php
+      require 'connection.php';
+
+      $per_page = 1;
+      $current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+      $offset = ($current_page - 1) * $per_page;
+
+      // Hitung total keluhan
+      $total_stmt = $conn->prepare("SELECT COUNT(*) FROM complaints");
+      $total_stmt->execute();
+      $total_stmt->bind_result($total_complaints);
+      $total_stmt->fetch();
+      $total_stmt->close();
+
+      // Hitung total halaman
+      $total_pages = ceil($total_complaints / $per_page);
+
+      // Ambil keluhan yang sesuai dengan halaman saat ini
+      $stmt = $conn->prepare("SELECT username, message FROM complaints ORDER BY timestamp_column DESC LIMIT ?, ?");
+      $stmt->bind_param("ii", $offset, $per_page);
+      $stmt->execute();
+      $result = $stmt->get_result();
+
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          $username = htmlspecialchars($row['username']);
+          $message = htmlspecialchars($row['message']);
+      ?>
+          <h5 class=""><?= $username ?></h5>
+          <textarea class="form-control mb-4" id="floatingTextarea" disabled><?= $message ?></textarea>
+      <?php
+        }
+      } else {
+        echo "No complaints found.";
+      }
+      $stmt->close();
+      $conn->close();
+      ?>
+
+      <!-- Pagination Start -->
+      <nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <?php if ($current_page > 1): ?>
+            <li class="page-item">
+                <a class="page-link" href="?page=<?= $current_page - 1 ?>" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
                 </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
+            </li>
+        <?php endif; ?>
+        <?php if ($current_page < $total_pages): ?>
+            <li class="page-item">
+                <a class="page-link" href="?page=<?= $current_page + 1 ?>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
                 </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
+            </li>
+        <?php endif; ?>
+    </ul>
+</nav>
+      <!-- Pagination End -->
     </div>
+  </div>
+</div>
     <!-- Contactus end  -->
 
     <!-- Content Start -->

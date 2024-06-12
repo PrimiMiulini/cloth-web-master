@@ -57,7 +57,7 @@ $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
                 <a class="nav-link active" aria-current="page" href="#">CONTACTUS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html" onclick=" return confirm('LOGOUT?') ">
+                <a class="nav-link active" aria-current="page" href="index.php" onclick=" return confirm('LOGOUT?') ">
                     <i data-feather="log-out" width="15"></i>
                 </a>
               </li>

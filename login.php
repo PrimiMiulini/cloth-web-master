@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $conn->close();
                 echo "<script>
                     alert('Password Salah, Silahkan coba lagi.');
-                    window.location.href = 'index.html';
+                    window.location.href = 'index.php';
                 </script>";
                 exit();
             }
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $conn->close();
                     echo "<script>
                         alert('Password Salah, Silahkan coba lagi.');
-                        window.location.href = 'index.html';
+                        window.location.href = 'index.php';
                     </script>";
                     exit();
                 }
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $conn->close();
                 echo "<script>
                         alert('Username Tidak ditemukan, Silahkan coba lagi.');
-                        window.location.href = 'index.html';
+                        window.location.href = 'index.php';
                     </script>";
                 exit();
             }
@@ -83,14 +83,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         echo "<script>
                 alert('Username atau Password tidak boleh kosong.');
-                window.location.href = 'index.html';
+                window.location.href = 'index.php';
               </script>";
         exit();
     }
 } else {
     echo "<script>
             alert('Invalid request method.');
-            window.location.href = 'index.html';
+            window.location.href = 'index.php';
           </script>";
     exit();
 }

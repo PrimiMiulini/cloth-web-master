@@ -27,7 +27,7 @@ if ($stmt->num_rows > 0) {
     $stmt->bind_param("ssss", $username, $fullname, $alamat, $hashed_password);
 
     if ($stmt->execute()) {
-        header("location:index.html");
+        header("location:index.php");
         exit();
     } else {
         echo "Pendaftaran gagal : " . $stmt->error;
