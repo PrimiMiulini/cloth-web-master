@@ -82,6 +82,35 @@ body{
     mix-blend-mode: difference;
 }
 
+/* marquee */
+.marquee-container {
+    width: 100%;
+    height: 4rem;
+    overflow: hidden;
+    background-color: #2b125f;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .marquee {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 10px 0;
+  }
+  
+  .marquee p {
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    animation: marquee 10s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
 
 /* Product */
 #product {

@@ -47,6 +47,14 @@ require 'contactUsAdmin.php';
     </section>
     <!-- hero End -->
 
+    <!-- Marquee Start -->
+    <div class="marquee-container">
+        <div class="marquee">
+          <p>Website ini dibuat oleh kelompok 82, yang beranggotakan Farhan, Dhafin, Ali, Umar, Pram, Alif, Mal, Fadly, Rona, Nandika.</p>
+        </div>
+      </div>
+    <!-- Marquee End -->
+
     <!-- About Start -->
     <section id="about" class="about m-4 p-4">
       <div class="container p-4">

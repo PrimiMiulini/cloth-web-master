@@ -83,6 +83,13 @@ $product = query("SELECT * FROM detail_product WHERE created_at >= DATE_SUB(CURD
       </main>
     </section>
     <!-- hero End -->
+    <!-- Marquee Start -->
+      <div class="marquee-container">
+        <div class="marquee">
+          <p>Website ini dibuat oleh kelompok 82, yang beranggotakan Farhan, Dhafin, Ali, Umar, Pram, Alif, Mal, Fadly, Rona, Nandika.</p>
+        </div>
+      </div>
+    <!-- Marquee End -->
 
     <!-- About Start -->
     <section id="about" class="about m-4 p-4">
